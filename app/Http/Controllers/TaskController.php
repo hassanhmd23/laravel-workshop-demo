@@ -33,7 +33,7 @@ class TaskController extends Controller
         return view('tasks.index', [
             'projects' => Project::query()->select('id', 'name')->get(),
             'users' => User::query()->select('id', 'name')->get(),
-            'tasks' => $query->latest()->paginate(1)
+            'tasks' => $query->latest()->paginate(3)
         ]);
     }
 
